@@ -1,0 +1,388 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="monitor-signature" content="monitor:player:html5">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="keywords" content="国考面试,国考面试资料,国税面试资料,税务局面试资料" />
+<meta name="Description" content="税务局面试到底怎么考？竟如此不同！" />
+<link rel="image_src" href="files/shot.png">
+<link rel="shortcut icon" href="files/thumb/1.jpg" />
+<link rel="apple-touch-icon" href="files/thumb/1.jpg" />
+<meta name="og:image" content="files/shot.png">
+<meta property="og:image" content="files/shot.png">
+<title>2019国考税务局专业专项揭秘</title>
+
+<link rel="stylesheet" href="mobile/style/style.css" />
+<link rel="stylesheet" href="mobile/style/player.css" />
+<link rel="stylesheet" href="mobile/style/phoneTemplate.css" />
+
+<script src="mobile/javascript/jquery-1.9.1.min.js"></script>
+
+<script src="mobile/javascript/config.js"></script>
+
+
+
+</head>	
+<body>
+<script src="mobile/javascript/search_config.js"></script>
+<script src="mobile/javascript/bookmark_config.js"></script>
+<script src="mobile/javascript/LoadingJS.js"></script>
+
+<script src="http://dl.offcn.com/aa/offcn/main.js"></script>
+
+<link rel="stylesheet" href="mobile/style/template.css" />
+<script type="text/javascript">
+
+		
+	var sendvisitinfo = function(type,page){};
+	
+</script>
+
+<script></script>
+
+<!-- 登录start -->
+<div class="zg_mask" oncontextmenu=self.event.returnValue=false></div>
+<div class="zg_form" oncontextmenu=self.event.returnValue=false>
+    <h5>请先登录，阅读全文</h5>
+    <input type="text" id="phone" name="phone" placeholder="手机号" />
+    <div class="zc_dlbox">
+        <select id="city">
+            <option value="">省份</option>
+                        <option value="安徽">安徽</option>
+                        <option value="北京">北京</option>
+                        <option value="福建">福建</option>
+                        <option value="甘肃">甘肃</option>
+                        <option value="广东">广东</option>
+                        <option value="广西">广西</option>
+                        <option value="贵州">贵州</option>
+                        <option value="海南">海南</option>
+                        <option value="河北">河北</option>
+                        <option value="河南">河南</option>
+                        <option value="黑龙江">黑龙江</option>
+                        <option value="湖北">湖北</option>
+                        <option value="湖南">湖南</option>
+                        <option value="吉林">吉林</option>
+                        <option value="江苏">江苏</option>
+                        <option value="江西">江西</option>
+                        <option value="辽宁">辽宁</option>
+                        <option value="内蒙">内蒙</option>
+                        <option value="宁夏">宁夏</option>
+                        <option value="青海">青海</option>
+                        <option value="山东">山东</option>
+                        <option value="山西">山西</option>
+                        <option value="陕西">陕西</option>
+                        <option value="上海">上海</option>
+                        <option value="四川">四川</option>
+                        <option value="天津">天津</option>
+                        <option value="西藏">西藏</option>
+                        <option value="新疆">新疆</option>
+                        <option value="云南">云南</option>
+                        <option value="浙江">浙江</option>
+                        <option value="重庆">重庆</option>
+                    </select>
+        <p><span><label for="sendcode">请输入验证码：</label></span><input type="text" id="sendcode" name="info[yzm]" class="input2"><a href="javascript:void(0);" id="getyzm" microsoft="" class="yzm_btn">获取验证码</a><span id="daojishi">&nbsp;</span></p>
+    </div>
+    <input class="dl_sub" type="submit" value="登录" id="dosubmits" />
+    <input class="dl_sub" type="submit" value="注册" id="dosubmits_register" />
+</div>
+
+<!-- 提示 -->
+<!--<div class="zg_mask2" oncontextmenu=self.event.returnValue=false></div>-->
+<!--<div id="zg_form_two" class="zg_form_two" oncontextmenu="self.event.returnValue=false" style="display: block;">
+    <h5>#</h5>
+    <input class="dl_sub" type="button" value="点击下载" onclick="window.location.href='#'">
+</div>-->
+<!-- 登录end -->
+<script>
+    $("#dosubmits_register").hide();
+
+    $(".zg_mask2").hide();
+    $("#zg_form_two").hide();
+
+
+    setTimeout(function(){
+        $(".zg_mask").show();
+        $(".zg_form").show();
+    },15000);
+
+
+    //验证码60s倒计
+    var countdown=60;
+    var timer=null;
+    var timeFlag = false;//倒计时状态
+    function settime(val) {
+        if (countdown == 0) {
+            val.attr("disabled",false);
+            val.html("获取验证码");
+            countdown = 60;
+            val.removeClass('active');
+            $('.mima').hide();
+            clearTimeout(timer);
+            timeFlag = false;
+        } else {
+            val.attr("disabled", true);
+            val.html(countdown + "s");
+            countdown--;
+            val.addClass('active');
+            $('.mima').show();
+            timer=setTimeout(function() {
+                settime(val);
+            },1000)
+            timeFlag = true;
+        }
+    }
+
+    $(function(){
+        $('.zg_mask1').click(function() {
+            $('.zg_tkm').hide();
+            $(this).hide();
+        })
+        // 登录
+        $("#dosubmits").click(function(){
+            //手机号
+            var phone 	= $('#phone').val();
+            var reg = /^0?1[3456789]\d{9}$/;
+            var length = phone.length;
+            if(phone == null || phone == ''){
+                alert('请填写手机号');
+                return false;
+            }
+            if (!reg.test(phone) || length!=11){
+                alert('请填写正确的手机号');
+                return false;
+            }
+            
+                        $.getJSON("http://zg99.offcn.com/index/dianzishu/login?actid=150&callback=?",{'phone':phone},function(data){
+                        if(data.status==1){
+                            $(".zg_mask").hide();
+                            $(".zg_form").hide();
+                            $(".zg_mask2").show();
+                            $("#zg_form_two").show();
+                            return false;
+                        }else if(data.status == 2){
+                            // alert(data.msg);
+                            alert('用户不存在，请先注册');
+                            $(".zc_dlbox").show();
+                            $("#dosubmits").hide();
+                            $("#dosubmits_register").show();
+                            return false;
+                        }else{
+                             alert(data.msg);
+                        }
+                        });
+                   
+        });
+        // 注册
+        $("#dosubmits_register").click(function(){
+            //手机号
+            var phone 	= $('#phone').val();
+            var reg = /^0?1[3456789]\d{9}$/;
+            var length = phone.length;
+            if(phone == null || phone == ''){
+                alert('请填写手机号');
+                return false;
+            }
+            if (!reg.test(phone) || length!=11){
+                alert('请填写正确的手机号');
+                return false;
+            }
+
+            //报考城市
+            var city = $('#city').val();
+            if(city == null || city == ''){
+                alert('请选择报考省份');
+                return false;
+            }
+
+            //短信验证码
+            var sendcode = $('#sendcode').val();
+            if(sendcode == null || sendcode == ''){
+                alert('请填写验证码');
+                return false;
+            }
+            $.getJSON("http://zg99.offcn.com/index/dianzishu/register?actid=150&callback=?",{'phone':phone, 'yzm':sendcode, 'city':city},function(data){
+                if(data.status==1){
+                    $(".zg_mask").hide();
+                    $(".zg_form").hide();
+                    $(".zg_mask2").show();
+                    $("#zg_form_two").show();
+                    return false;
+                }else{
+                    alert(data.msg);
+					$(".zg_mask").show();
+                    $(".zg_form").show();
+                    //$(".zg_mask2").show();
+                    //$("#zg_form_two").show();
+                    return false;
+                }
+            });
+        });
+
+        //隐藏下载
+        $(".zg_mask2").click(function(){
+            $(".zg_mask2").hide();
+            $("#zg_form_two").hide();
+        });
+
+        //点击获取验证码- 验证
+        $('#getyzm').click(function(){
+            if(timeFlag){
+                alert("请在60s后获取验证码");
+                return false;
+            }
+            var phone 	= $('#phone').val();
+            var reg = /^0?1[3456789]\d{9}$/;
+            var length = phone.length;
+
+            if(phone == null || phone == ''){
+                alert('请填写手机号');
+                return false;
+            }
+
+            if (!reg.test(phone) || length!=11){
+                alert('请填写正确的手机号');
+                return false;
+            }
+
+            $.getJSON("http://zg99.offcn.com/index/dianzishu/sendmsg?actid=150&callback=?",{'phone':phone},function(data){
+                if(data.status == 1){
+                    settime($('#getyzm'));
+                    alert('获取验证码成功');
+                    return false;
+                }else{
+                    alert(data.msg);
+                    return false;
+                }
+            });
+        });
+    });
+
+</script>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+<script type="text/javascript">
+$(document).ready(wxFun = function () {
+	var currentURL = window.location.href;
+	$.post('http://www.offcn.com/api.php?op=wx_wt', {
+		'url' : currentURL
+	}, function (data) {
+		data = JSON.parse(data);
+		var timestamp = data["timeStamp"];
+		var nonceStr = data["nonceStr"];
+		var signature = data["signature"];
+		var appId = data["appId"];
+		wx.config({
+			//debug: true,
+			appId: appId, // 必填，公众号的唯一标识
+			timestamp: timestamp, // 必填，生成签名的时间戳
+			nonceStr: nonceStr, // 必填，生成签名的随机串
+			signature: signature,// 必填，签名，见附录1
+			jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+		});
+		wx.ready(function () {
+			// alert('初始化分享');
+			//分享给朋友
+			var sharelike = 'http://www.offcn.com/zg/gkms_swj/';
+			//分享到微信好友
+			wx.onMenuShareAppMessage({
+				title: '税务局面试到底怎么考？', // 分享标题
+				desc: '竟如此不同！专业专项，全方位揭秘！', // 分享描述
+				link: sharelike, // 分享链接
+				imgUrl: 'http://www.offcn.com/zg/gkms_swj/img/icon.jpg', // 分享图标
+				success: function () {
+					// 用户确认分享后执行的回调函数
+					maskFriend.close();
+					maskBack.close();
+					localStorage.setItem('friendShare', 1);
+				},
+				cancel: function () {
+					// 用户取消分享后执行的回调函数
+				}
+			});
+			//分享到朋友圈
+			wx.onMenuShareTimeline({
+				title: '税务局面试到底怎么考？', // 分享标题
+				link: sharelike, // 分享链接
+				imgUrl: "http://www.offcn.com/zg/gkms_swj/img/icon.jpg", // 分享图标
+				success: function () {
+					// 用户确认分享后执行的回调函数
+					maskShare.close();
+					maskBack.close();
+					localStorage.setItem("detectShareLimit", 1);
+				},
+				cancel: function () {
+					// 用户取消分享后执行的回调函数
+				}
+			});
+		});
+		wx.error(function (res) {
+			console.log(res)
+		});
+	}, 'json');
+});
+</script>
+
+<style>
+    /*微信弹框*/
+    .zg_mask1{background:#000; opacity:.7; filter:alpha(opacity=70); position:fixed; left:0; top:0; width:100%; height:100%; z-index:9997;}
+    .zg_mask2{background:#000; opacity:.7; filter:alpha(opacity=70); position:fixed; left:0; top:0; width:100%; height:100%; z-index:9996;}
+    .zg_tkm{width:610px; position:absolute; left:50%; top:5%; margin-left:-305px;  background:url(http://hd.offcn.com/dianzishu/public/static/white_paper/gksj/mobile/tank_bg.png) no-repeat center top; z-index:9998;}
+    .zg_tkm h5{padding:160px 0 30px; font:bold 36px/1 'Microsoft Yahei'; color:#ffd900; text-align:center; margin:0 auto;}
+    .zg_tkm p{font:26px/46px 'Microsoft Yahei'; color:#fff; width:510px; margin:0 auto 30px;}
+    .zg_ewm{background:#fff; border-radius:0 0 8px 8px; padding:40px 0 0; height:350px; text-align:center; font:26px/1 'Microsoft Yahei'; color:#666;}
+    .zg_ewm img{display:block; width:260px; height:260px; margin:0 auto 30px; }
+
+    /*微信登录*/
+    .zg_mask{background:#000; opacity:.7; filter:alpha(opacity=70); position:fixed; left:0; top:0; width:100%; height:100%; z-index:9998; display:none;}
+    .zg_form{width:500px; height:auto; background:#ececec; border-radius:10px;  padding:20px 0 30px; position:fixed; left:50%; top:30%;  z-index:9999; margin-left:-250px; text-align:center; display:none;}
+    .zg_form h5{font:bold 20px/1.5 'Microsoft Yahei'; color:#ee4086; margin-bottom:25px;}
+    .zg_form input{display:block; width:320px; margin:0 auto 20px; background:#fff; border-radius:5px; font:18px/40px 'Microsoft Yahei'; padding-left:10px; border:none; }
+    .zg_form select{display:block; width:330px; margin:0 auto 20px; background:#fff; border-radius:5px; font:18px/40px 'Microsoft Yahei';  border:none; height:40px;  }
+    .zg_form p{margin-bottom:30px; white-space:nowrap;}
+    .zg_form p input{display:inline-block; width:100px; margin-right:8px; }
+    .zg_form p .yzm_btn{background:#ee4086; color:#fff; height:40px; width:90px; text-align:center; font:16px/40px 'Microsoft Yahei'; display:inline-block; *display:inline; zoom:1; border-radius:5px;}
+    .zg_form p #daojishi{background:#ee4086; color:#fff; height:40px; width:90px; text-align:center; font:16px/40px 'Microsoft Yahei'; display:inline-block; *display:inline; zoom:1; border-radius:5px; display:none;}
+    .zc_dlbox{display:none; }
+    .zg_form .dl_sub{width:120px; margin:0 auto; padding:0; border:1px solid #ee4086; color:#ee4086; cursor:pointer; }
+    @media screen and (max-width:500px){
+        .zg_form{width:320px; margin-left:-160px; top:15%;}
+        .zg_form input{width:280px;}
+        .zg_form select{width:290px;}
+        .zg_form p input{width:74px;}
+        .zg_tkm{width:320px; background-size:100% 50%; margin-left:-160px;}
+        .zg_tkm h5{padding:100px 0 10px; font:bold 22px/1 'Microsoft Yahei';}
+        .zg_tkm p{font:14px/26px 'Microsoft Yahei'; color:#fff; width:310px; margin:0 auto 10px; text-align:center;}
+        .zg_ewm{padding-top:20px; height:200px; font-size:14px;}
+        .zg_ewm img{margin-bottom:20px; width:130px; height:auto;}
+    }
+
+    .zg_form_two{width:500px; height:auto; background:#ececec; border-radius:10px;  padding:20px 0 30px; position:fixed; left:50%; top:30%;  z-index:9999; margin-left:-250px; text-align:center; display:none;}
+    .zg_form_two h5{font:bold 20px/1.5 'Microsoft Yahei'; color:#ee4086; margin-bottom:25px;}
+    .zg_form_two input{display:block; width:320px; margin:0 auto 20px; background:#fff; border-radius:5px; font:18px/40px 'Microsoft Yahei'; padding-left:10px; border:none; }
+    .zg_form_two select{display:block; width:330px; margin:0 auto 20px; background:#fff; border-radius:5px; font:18px/40px 'Microsoft Yahei';  border:none; height:40px;  }
+    .zg_form_two p{margin-bottom:30px; white-space:nowrap;}
+    .zg_form_two p input{display:inline-block; width:100px; margin-right:8px; }
+    .zg_form_two p .yzm_btn{background:#ee4086; color:#fff; height:40px; width:90px; text-align:center; font:16px/40px 'Microsoft Yahei'; display:inline-block; *display:inline; zoom:1; border-radius:5px;}
+    .zg_form_two p #daojishi{background:#ee4086; color:#fff; height:40px; width:90px; text-align:center; font:16px/40px 'Microsoft Yahei'; display:inline-block; *display:inline; zoom:1; border-radius:5px; display:none;}
+    .zc_dlbox{display:none; }
+    .zg_form_two .dl_sub{width:120px; margin:0 auto; padding:0; border:1px solid #ee4086; color:#ee4086; cursor:pointer; }
+    @media screen and (max-width:500px){
+        .zg_form_two{width:320px; margin-left:-160px; top:15%;}
+        .zg_form_two input{width:280px;}
+        .zg_form_two select{width:290px;}
+        .zg_form_two p input{width:74px;}
+        .zg_tkm{width:320px; background-size:100% 50%; margin-left:-160px;}
+        .zg_tkm h5{padding:100px 0 10px; font:bold 22px/1 'Microsoft Yahei';}
+        .zg_tkm p{font:14px/26px 'Microsoft Yahei'; color:#fff; width:310px; margin:0 auto 10px; text-align:center;}
+        .zg_ewm{padding-top:20px; height:200px; font-size:14px;}
+        .zg_ewm img{margin-bottom:20px; width:130px; height:auto;}
+    }
+</style>
+<script type="text/javascript" src="http://www.offcn.com/statics/js/bdbot.js"></script>
+<script type="text/javascript" src="http://www.offcn.com/statics/js/zg.js"></script>
+</body>
+</html>
